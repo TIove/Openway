@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "/Users/igorok/go/src/RegistrationToActivity/api/auth";
+option java_multiple_files = true;
+option java_package = "io.grpc.auth";
+option java_outer_classname = "Auth";
+
+package api;
+
+service Auth {
+  rpc Login (LoginRequest) returns (LoginResponse) {}
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse) {}
+}
+
+message LoginRequest {
+  string login = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+}
+
+message IsAdminRequest {
+  string token = 1;
+}
+
+message IsAdminResponse {
+  bool isAdmin = 1;
+}

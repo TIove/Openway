@@ -1,0 +1,15 @@
+{{template "base" .}}
+
+{{define "title"}}Home page{{end}}
+
+{{define "main"}}
+<p>Login<p>
+<input type="login" name="login" class="form-control">
+
+<p>Password<p>
+<input type="password" name="password" class="form-control">
+
+<button>Submit</button>
+
+<a href="/admin" class="button button-red">Перейти на страницу</a>
+{{end}}

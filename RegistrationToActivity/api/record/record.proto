@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "/Users/igorok/go/src/RegistrationToActivity/api/record";
+option java_multiple_files = true;
+option java_package = "io.grpc.record";
+option java_outer_classname = "Record";
+
+package api;
+
+service Record {
+  rpc GetRecords (TokenRequest) returns (GetRecordsResponse) {}
+  rpc SetRecord (SetRecordRequest) returns (SetRecordResponse) {}
+}
+
+message TokenRequest {
+  string token = 1;
+}
+
+message SetRecordRequest {
+  string recordJson = 1;
+}
+
+message SetRecordResponse {
+   bool isSuccess = 1;
+}
+
+message GetRecordsResponse {
+  bool isSuccess = 1;
+  repeated string recordsJson = 2;
+}
